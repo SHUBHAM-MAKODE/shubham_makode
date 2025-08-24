@@ -62,7 +62,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 //     loop: true
 // });
 //rotating words
-const words = ['Frontend Developer', 'Mobile Application Developer','Flutter developer', 'Student'];
+const words = ['Software Engineer','Frontend Developer', 'Mobile Application Developer','Flutter developer'];
 let index = 0;
 const rotatingSpan = document.querySelector('.rotating-words');
 
@@ -77,4 +77,5 @@ setInterval(() => {
     rotatingSpan.style.transform = 'translateY(0)';
   }, 300);
 }, 3000);
+
 
