@@ -79,3 +79,19 @@ setInterval(() => {
 }, 3000);
 
 
+const tabs = document.querySelectorAll('.class-link');
+  const contents = document.querySelectorAll('.content-tab');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // Remove all active classes
+      tabs.forEach(t => t.classList.remove('active-tab'));
+      contents.forEach(c => c.classList.remove('active-content'));
+
+      // Add active classes to selected tab and content
+      tab.classList.add('active-tab');
+      contents[index].classList.add('active-content');
+    });
+  });
+
+
