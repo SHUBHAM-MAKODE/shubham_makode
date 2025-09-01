@@ -246,6 +246,173 @@ span{
     margin: 2rem 0 3rem;
 }
 
+/* modal box */
+.modal-state {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When checkbox is checked, display the modal overlay and box */
+.modal-state:checked + .modal-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    transform: translateY(-50px); 
+    transition: transform 0.5s ease-out;
+}
+
+.modal-state:checked + .modal-overlay .modal-box {
+    transform: translateY(0); 
+}
+
+
+.modal-open-button, .modal-close-button {
+    cursor: pointer;
+    background-color: var(--second-bd-color);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal-close-button:hover, .modal-open-button:hover {
+    background-color: var(--main-color);
+}
+
+
+
+/* TABS */
+.title-tab {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.class-link {
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+}
+
+.class-link:hover,
+.class-link.active,
+.class-link.active-tab {
+  background-color: var(--second-bd-color);
+  color: #000;
+}
+
+.content-tab {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.content-tab.active-content {
+  display: block;
+}
+
+.content-tab ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-tab li {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.content-tab li span {
+  font-weight: 600;
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+
+.skillset{
+  max-height:30vh;
+  overflow-y: scroll;
+  font-size: 1.5rem;
+}
+
+.title-area{
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.line-area{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.topic{
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.percent{
+  color: #000;
+  font-weight: 600;
+}
+
+
+.bar{
+  position: absolute;
+  bottom: -0.75rem;
+  height: 0.75rem;
+  background: linear-gradient(
+    90deg,#fff4c2 0%, var(--main-color) 50%,
+    var(--second-bd-color) 100%  
+  );
+  border-radius: 50px;
+  box-shadow: 0 2px aliceblue;
+  max-width: 560px;
+}
+
+.bar-1 {width:95% ;}
+.bar-2 {width:90% ;}
+.bar-3 {width:85% ;}
+.bar-4 {width:80% ;}
+.bar-5 {width:75% ;}
+.bar-5 {width:70% ;}
+.bar-6 {width: 65%;}
+.bar-7 {width: 60%;}
+.bar-8 {width: 55%;}
+
+
+
 .services h2{
     margin-bottom: 5rem;
 }
@@ -572,4 +739,5 @@ span{
         text-align: center;
         margin-top: 2rem;
     }
+
 }
